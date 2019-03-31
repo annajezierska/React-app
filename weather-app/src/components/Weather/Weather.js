@@ -4,7 +4,11 @@ import React, { Component } from 'react'
   render() {
     return (
       <div>
-        Here's the weather
+        {this.props.city}
+        {this.props.country}
+        {this.props.temperature}
+        {this.props.humidity}
+        {this.props.description}
       </div>
     )
   }
