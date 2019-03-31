@@ -1,34 +1,33 @@
-import React, { Component } from "react";
+import React from "react";
 
-class Weather extends Component {
-  render() {
-    return (
+const Weather = ({ city, country, temperature, humidity, description, error }) => {
+         
+      return (
       <div className='weather__info'>
       {	
-	 	this.props.city && this.props.country && <p className="weather__key"> Location: 
-	 		<span className="weather__value"> { this.props.city }, { this.props.country }</span>
+	 	city && country && <p className="weather__key"> Location: 
+	 		<span className="weather__value"> { city }, { country }</span>
 	 	</p> 
 	 }
 	 { 	
-	 	this.props.temperature && <p className="weather__key"> Temperature: 
-	 		<span className="weather__value"> { this.props.temperature }	</span>
+	 	temperature && <p className="weather__key"> Temperature: 
+	 		<span className="weather__value"> { temperature }	</span>
 	 	</p> 
 	 }
 	 { 	
-	 	this.props.humidity && <p className="weather__key"> Humidity: 
-	 		<span className="weather__value"> { this.props.humidity } </span>
+	 	humidity && <p className="weather__key"> Humidity: 
+	 		<span className="weather__value"> { humidity } </span>
 	 	</p> 
 	 }
 	 { 	
-	 	this.props.description && <p className="weather__key"> Conditions: 
-	 		<span className="weather__value"> { this.props.description } </span>
+	 	description && <p className="weather__key"> Conditions: 
+	 		<span className="weather__value"> { description } </span>
 	 </p> 
 	 }
 	 { 
-	 	this.props.error && <p className="weather__error">{ this.props.error }</p>  
+	 	error && <p className="weather__error">{ error }</p>  
 	 }
       </div>
     );
-  }
 }
 export default Weather;
