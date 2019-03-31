@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-class Title extends Component {
-  render() {
+const Title = ({ props }) => {
     return (
       <div>
       <h1 className="title-container__title">Weather Finder</h1>
@@ -9,6 +8,6 @@ class Title extends Component {
       </div>
     )
   }
-}
+
 
 export default Title;

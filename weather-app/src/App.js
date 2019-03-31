@@ -20,7 +20,7 @@ class App extends Component {
     e.preventDefault()
     const city = e.target.elements.city.value
     const country = e.target.elements.country.value
-    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric~]`)
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=metric`)
     const data = await api_call.json()
     if (city && country) {
       console.log(data)
@@ -45,6 +45,7 @@ class App extends Component {
 }
 
   render() {
+   const {temperature, humidity, city, country, description, error} = this.state
     return (
       <div className="App">
         <div className="wrapper">
@@ -57,12 +58,12 @@ class App extends Component {
                 <div className="col-xs-7 form-container">
                   <Form getWeather={this.getWeather} />
                   <Weather 
-                    temperature={this.state.temperature} 
-                    humidity={this.state.humidity}
-                    city={this.state.city}
-                    country={this.state.country}
-                    description={this.state.description}
-                    error={this.state.error}
+                    temperature={temperature} 
+                    humidity={humidity}
+                    city={city}
+                    country={country}
+                    description={description}
+                    error={error}
                   />
                 </div>
               </div>
