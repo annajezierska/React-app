@@ -1,2 +1,3 @@
 # React-app
-This is a simple web application showing temperature and conditions in a specific city.
+A simple web application showing temperature and conditions in any city of your desire. :)
+The weather data is fetched from: https://openweathermap.org
